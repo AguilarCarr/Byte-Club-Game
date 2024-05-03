@@ -1,5 +1,6 @@
 import pygame
 import sys
+from classes import *
 
 # Initialize Pygame
 pygame.init()
@@ -10,10 +11,10 @@ screen_height = 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 
 # Set the background color (black)
-background_color = (0, 0, 0)  # RGB value for black
+# background_color = (0, 0, 0)  # RGB value for black
 
 # Fill the screen with the background color
-screen.fill(background_color)
+# screen.fill(background_color)
 #
 # # Load the background image (Replace 'image_directory' with the actual directory of your image)
 # background_image = pygame.image.load("image_directory").convert()
@@ -31,6 +32,8 @@ pygame.display.update()
 while True:
     # Event handling
     for event in pygame.event.get():
+        slime = Slime(400, 300, 5)
+        slime.show(screen)
         if event.type == pygame.QUIT:
             pygame.quit()
             sys.exit()
